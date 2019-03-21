@@ -1,4 +1,4 @@
-class gameObj
+class GameObj
   # HOW TO KEEP TRACK OF TURN? PLAYER.TURN? OR TURN OBJ
   def asksQuestion
     # asks question to player.turn
@@ -18,6 +18,24 @@ class gameObj
 
 end
 
+class Question
+  def initialize
+    @number1 = # Random number
+    @number2 = # another random number
+  end
+
+  def question_text
+    "what is #{@number1} + #{@number2}?"
+  end
+
+  def correct_answer?(some_answer)
+    @number1 + @number2 == some_answer.to_i
+  end
+end
+
+question = Question.new
+text_of_question = question.question_text
+right_answer = question.correct_answer? 5
 class Players
   attr_accessor :name, :health,
   
